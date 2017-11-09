@@ -1,0 +1,70 @@
+
+/*#c2c4f5
+#dac2f5
+*/
+body{
+	background-image: url("../images/marvel.jpg");
+	background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+}
+
+#tile{
+	line-height: 50px;
+}
+.banner{
+	background:white;
+	opacity: 0.8;
+	border-radius: 15px;
+	padding:3px;
+	color:black;
+	font-family: arial, Sans Serif;
+	font-size: 80px;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 20px;
+	/*background-image: url(../images/banner_hangman.jpg);*/
+
+}
+#movieChar{
+	border:2px solid grey;
+	border-radius: 5px;
+	background-color: white;
+	box-shadow: 3px 3px 3px grey;
+	width:30px;
+	height:30px;
+	margin-left:10px;
+	margin-right:10px;
+	display:none;
+	float:left;
+	/*margin:auto;*/
+
+}
+
+#movieSpace{
+	border:2px solid grey;
+	border-radius: 5px;
+	background-color: teal;
+	box-shadow: 3px 3px 3px silver;
+	width:30px;
+	height:30px;
+	margin-left:10px;
+	margin-right:10px;
+	display:none;
+	float:left;
+	/*margin:auto;*/
+}
+
+.board{
+	background: white;
+	opacity: 0.9;
+	border:3px solid black;
+	border-radius: 15px;
+	margin:20px;
+	padding:30px;
+	color:black;
+	font-weight: bold;
+	font-size: 20px;
+	font-weight: bold;
+}
