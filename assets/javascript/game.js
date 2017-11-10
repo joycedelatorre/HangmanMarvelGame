@@ -21,11 +21,11 @@ var temp=[];
 // 	const keyName = event.key;
 // 	alert('keydown event\n\n' + 'key: ' + keyName);
 // })
-
+var movieToGuess;
 // ------------------------------------------------------------------ Get random movie
-var randNum = Math.floor(Math.random() * listOfmovies.length);
-var movieToGuess = listOfmovies[randNum];
 	function pickRandomMovie(){
+			var randNum = Math.floor(Math.random() * listOfmovies.length);
+			movieToGuess = listOfmovies[randNum];
 			console.log(movieToGuess);
 // ----------------------------------------------------------------- Display the tiles
 		 	for(var i=0; i < movieToGuess.length; i++){
@@ -38,9 +38,10 @@ var movieToGuess = listOfmovies[randNum];
 		 			document.getElementById("tile").innerHTML =temp;
 		 		}
 		 	}
-			// console.log(temp);
+			movieToGuess = movieToGuess
+			// return movieToGuess;
 	}
-// -----------------------------------------------------------------------User Guess
+// -------------------------------------------------------------------------User Guess
 var guess;
 var text;
 var textList = [];
@@ -60,6 +61,7 @@ var textList = [];
 
 var lives = 7;
 var score = 0;
+var newGame = false;
 var man = ["assets/images/hangman1.png","assets/images/hangman2.png","assets/images/hangman3.png","assets/images/hangman4.png","assets/images/hangman5.png","assets/images/hangman6.png","assets/images/hangman7.png"]
 	
 	function checker(){
@@ -79,8 +81,8 @@ var man = ["assets/images/hangman1.png","assets/images/hangman2.png","assets/ima
 
 		}
 
-		// this is to score
-		var counter =0;
+		// this is to update score
+		var counter = 0;
 
 		for(var i=0; i < temp.length; i++){
 			if(movieToGuess.includes(temp[i])){
@@ -88,14 +90,71 @@ var man = ["assets/images/hangman1.png","assets/images/hangman2.png","assets/ima
 			}
 		}
 		if (temp.length == counter){
+			//----INCREMENTING THE SCORE
 			score ++;
-			document.getElementById("score").textContent ="Score: " + score;
+			document.getElementById("score").innerHTML ="Score: " + score;
+			// -----RESETTING ----------
+			temp = new Array ();
+			document.getElementById("tile").innerHTML= "";
+			textList = new Array();
+			document.getElementById("guesses").innerHTML= "";
+			pickRandomMovie();
+			lives = 7;
+			document.getElementById("lives").innerHTML = "Lives: " + lives;
 		}
 		if (score == 3){
 			alert("You WIN!");
+			newGame = confirm("Would you like to play again?");
+			if (newGame == true){
+				// temp = [];
+				// document.getElementById("tile").innerHTML= "";
+				// textList = [];
+				// document.getElementById("guesses").innerHTML= "Guesses:" + "";
+				// score = 0;
+				// document.getElementById("score").innerHTML="Score: " + score;
+				// lives = 7;
+				// document.getElementById("lives").innerHTML = "Lives: " + lives;
+				// pickRandomMovie();
+				reset();
+
+			} else{
+				alert("GOOD BYE! SEE YOU AGAIN!")
+			}
+
+
 		} else if (lives==0){
-			return(alert("You LOST!"));
+			alert("You LOST!");
+			newGame = confirm ("Would you like to play again?");
+			if (newGame == true){
+				// temp = [];
+				// document.getElementById("tile").innerHTML= "";
+				// textList = [];
+				// document.getElementById("guesses").innerHTML= "Guesses:" + "";
+				// score = 0;
+				// document.getElementById("score").innerHTML="Score: " + score;
+				// lives = 7;
+				// document.getElementById("lives").innerHTML = "Lives: " + lives;
+				// pickRandomMovie();
+				reset();
+			}else{
+				alert("GOOD BYE! SEE YOU AGAIN!")
+			}
 		}
+
+			// console.log(newGame);
+	}
+
+	function reset(){
+		temp = [];
+		document.getElementById("tile").innerHTML= "";
+		textList = [];
+		document.getElementById("guesses").innerHTML= "Guesses:" + "";
+		score = 0;
+		document.getElementById("score").innerHTML="Score: " + score;
+		lives = 7;
+		document.getElementById("lives").innerHTML = "Lives: " + lives;
+		pickRandomMovie();
+
 	}
 
 
