@@ -17,6 +17,7 @@
 	</head>
 	<body>
 		<div class="container">
+			<div class="row pad"></div> <!-- PADDING -->
 			<div class="row banner" >
 				<div class="col-lg-2"> </div>
 				<div class="col-lg-8 banner">
@@ -24,7 +25,7 @@
 			    </div>
 			    <div class="col-lg-2"> </div>
 			</div>
-				<div class="row"></div> <!-- PADDING -->
+			<div class="row"></div> <!-- PADDING -->
 
 				<div class="row board" id ="lives">
 					<h3>Lives:</h3>
@@ -35,15 +36,22 @@
 					<h3>Score: </h3>
 				</div>
 				<div class="row board" id="guesses">
-					<h2>Guesses</h2>
+					<h2>Guesses:</h2>
 				</div>
 				<div class="row board" id="tile">
-					<h2>tile</h2>
+					<h2>Tiles:</h2>
+				</div>
+				<div class="row"></div> <!-- PADDING -->
+				<div class="row">
+					<div class ="col-lg-6 button" id="ngame" onclick="reset();">NEW GAME</div>
+					<div class ="col-lg-6 button" id="kwit" onclick="clear_template();">QUIT</div>
 				</div>
 		</div>	
 
 		<script type="text/javascript">
-			window.onload = pickRandomMovie();
+			// window.onload = pickRandomMovie();
+			//document.getElementById("puhlay").click(console.log(
+			 //	"hola"));
 		</script>	 
 
 	</body>

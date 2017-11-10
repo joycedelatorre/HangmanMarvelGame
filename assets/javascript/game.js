@@ -6,6 +6,7 @@
 // });
 
 // );
+
 var listOfmovies=["thor","spiderman","batman","daredevil","the avengers","captain america",
 "guardians of the galaxy","iron man","the incredible hulk","doctor strange","x-men","the fantastic four","blade","wonder woman",
 "deadpool","wolverine","elektra","black widow","cable","thanos","ghost rider","loki","cyclops","captain marvel","black panther",
@@ -157,6 +158,18 @@ var man = ["assets/images/hangman1.png","assets/images/hangman2.png","assets/ima
 
 	}
 
+	function clear_template(){
+		alert("bye");
+		temp = [];
+		document.getElementById("tile").innerHTML= "";
+		textList = [];
+		document.getElementById("guesses").innerHTML= "Guesses:" + "";
+		score = 0;
+		document.getElementById("score").innerHTML="Score: " + score;
+		lives = 0;
+		document.getElementById("lives").innerHTML = "Lives: " + lives;
+
+	}
 
 
 
