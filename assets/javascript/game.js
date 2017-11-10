@@ -13,7 +13,7 @@ var listOfmovies=["thor","spiderman","batman","daredevil","the avengers","captai
 "falcon","hank pym","hawkeye","luke cage","quicksilver","scarlet witch","vision","wonder man","wasp","spider woman",
 "she-hulk","winter soldier","iron fist","storm","emma frost","apocalypse","professor x", "jean grey","rogue","mystique","sabretooth",
 "iceman","beast","colossus","angel","gambit","jubilee","kitty pryde","magik","nightcrawler",
-"northstar","psylocke",];
+"northstar","psylocke","green hornet"];
 var display = [];
 var temp=[];
 
@@ -35,7 +35,7 @@ var movieToGuess;
 		 			document.getElementById("tile").innerHTML =temp;
 		 		} else {
 		 		console.log(movieToGuess[i]);
-		 			temp.push("*");
+		 			temp.push(" ");
 		 			document.getElementById("tile").innerHTML =temp;
 		 		}
 		 	}
